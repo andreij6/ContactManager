@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Contact.Models.Person>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@foreach (var person in Model)
+{
+    <a href="/Home/Details/@person.ID">@person.FirstName</a> 
+    @person.LastName    <br />
+    @person.PhoneNumber    <br />
+    @person.Email    <br />
+    @person.Address.Street <br />
+    @person.Address.City<br />
+    @person.Address.Zip <a href="/Home/UpdateContact/@person.ID">Edit</a>
+    <a href="/Home/DeleteContact/@person.ID" >Delete</a><br /><br />
+
+}
